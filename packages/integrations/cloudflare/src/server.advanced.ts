@@ -13,6 +13,7 @@ export function createExports(manifest: SSRManifest) {
 
 	const fetch = async (request: Request, env: Env, context: any) => {
 		const { origin, pathname } = new URL(request.url);
+    env.name = "cloudflare";
 
 		// static assets
 		if (manifest.assets.has(pathname)) {
