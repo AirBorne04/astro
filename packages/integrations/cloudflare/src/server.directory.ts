@@ -21,6 +21,8 @@ export function createExports(manifest: SSRManifest) {
 			return next(assetRequest);
 		}
 
+    (globalThis as any).WORKER_ENV = runtimeEnv.env;
+
 		let routeData = app.match(request, { matchNotFound: true });
 		if (routeData) {
 			Reflect.set(

@@ -1,6 +1,8 @@
 import { createSignal } from 'solid-js';
 import './Counter.css';
 
+console.log("before function call: ", globalThis.WORKER_ENV);
+
 export default function Counter({ children }) {
 	const [count, setCount] = createSignal(0);
 	const add = () => setCount(count() + 1);

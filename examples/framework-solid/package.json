@@ -11,8 +11,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^1.6.2",
-    "solid-js": "^1.4.3",
-    "@astrojs/solid-js": "^1.2.2"
+    "@astrojs/cloudflare": "^3.1.0",
+    "@astrojs/solid-js": "^1.2.1",
+    "astro": "^1.5.2",
+    "solid-js": "^1.4.3"
   }
 }

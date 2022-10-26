@@ -30,7 +30,7 @@ export function getAdapter(isModeDirectory: boolean): AstroAdapter {
 const SHIM = `globalThis.process = {
 	argv: [],
 	env: {},
-};`;
+}; globalThis.WORKER_ENV = {};`;
 
 export default function createIntegration(args?: Options): AstroIntegration {
 	let _config: AstroConfig;
@@ -48,6 +48,7 @@ export default function createIntegration(args?: Options): AstroIntegration {
 						client: new URL('./static/', config.outDir),
 						server: new URL('./', config.outDir),
 						serverEntry: '_worker.js',
+            envKey: (key: string) => `globalThis.WORKER_ENV["${key}"]`
 					},
 				});
 			},

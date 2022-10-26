@@ -206,6 +206,7 @@ importers:
       astro: ^1.6.2
       solid-js: ^1.4.3
     dependencies:
+      '@astrojs/cloudflare': link:../../packages/integrations/cloudflare
       '@astrojs/solid-js': link:../../packages/integrations/solid
       astro: link:../../packages/astro
       solid-js: 1.6.1
