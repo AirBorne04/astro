@@ -20,6 +20,8 @@ export function createExports(manifest: SSRManifest) {
 			return env.ASSETS.fetch(assetRequest);
 		}
 
+		(globalThis as any).WORKER_ENV = env;
+
 		let routeData = app.match(request, { matchNotFound: true });
 		if (routeData) {
 			Reflect.set(
